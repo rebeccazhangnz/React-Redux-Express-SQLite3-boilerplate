@@ -1,0 +1,45 @@
+{
+  "name": "React-Express-SQLite-Boilerplate",
+  "version": "1.0.0",
+  "description": "This is a bolierplate for react projects using express as server and SQLite as database",
+  "main": "index.js",
+  "author": "Rebecca Zhang",
+  "email": "rebeccazhangnz@outlook.com",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon server",
+    "start": "concurrently \"node server\" \"webpack --watch\"",
+    "dev": "concurrently 'yarn client' 'yarn server'",
+    "client": "webpack --watch",
+    "devServer": "webpack-dev-server",
+    "knex": "knex --knexfile ./knexfile.js",
+    "updateDb": "rm -f dev.sqlite3 && yarn knex migrate:latest && yarn knex seed:run"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "path": "^0.12.7",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "sqlite3": "^4.0.6",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
