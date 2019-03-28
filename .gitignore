@@ -1,2 +1,4 @@
 node_modules
 yarn.lock
+app.bundle.js
+app.bundle.js.map
